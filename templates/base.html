@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}TeenMed — Medicine for the Next Generation{% endblock %}</title>
+  <meta name="description" content="TeenMed — Empowering teens with medical knowledge, CPR training, health literacy, and future doctor resources." />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231B4FD8'/><text y='.9em' font-size='70' x='15'>🩺</text></svg>" />
+  {% block head %}{% endblock %}
+</head>
+<body>
+
+<!-- Page Loader -->
+<div class="page-loader" id="pageLoader">
+  <div class="page-loader-logo">Teen<span>Med</span></div>
+  <div class="spinner" style="border-color:rgba(27,79,216,0.2);border-top-color:var(--blue);width:24px;height:24px;"></div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <a href="/" class="nav-logo">
+    <div class="logo-icon">🩺</div>
+    Teen<span>Med</span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="/future-doctor">Future Doctor</a></li>
+    <li><a href="/health-literacy">Health Literacy</a></li>
+    <li><a href="/cpr-firstaid">CPR & First Aid</a></li>
+    <li><a href="/research">Research</a></li>
+    <li><a href="/equipment">Donations</a></li>
+    <li><a href="/mental-health">Mental Health</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <div data-auth-show="guest" style="display:flex;gap:0.8rem;align-items:center;">
+      <button class="btn btn-ghost" data-open-auth="login">Sign In</button>
+      <button class="btn btn-primary" data-open-auth="register">Join Free</button>
+    </div>
+    <div data-auth-show="user" style="display:none;align-items:center;gap:1rem;">
+      <span style="font-size:0.875rem;color:var(--gray);">Hi, <strong class="user-username" style="color:var(--black);"></strong></span>
+      <a href="/dashboard" class="btn btn-outline" style="padding:8px 16px;">Dashboard</a>
+      <button class="btn btn-ghost" data-logout style="font-size:0.85rem;">Sign Out</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Auth Modal -->
+<div class="modal-overlay" id="authModal">
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" aria-label="Close">✕</button>
+
+    <div class="modal-logo">
+      <div class="logo-icon">🩺</div>
+      Teen<span>Med</span>
+    </div>
+    <p class="modal-subtitle">Empowering the next generation of healers</p>
+
+    <!-- Tabs -->
+    <div class="auth-tabs">
+      <button class="auth-tab active" data-tab="login">Sign In</button>
+      <button class="auth-tab" data-tab="register">Create Account</button>
+    </div>
+
+    <!-- LOGIN PANEL -->
+    <div class="auth-panel" data-panel="login">
+      <form id="loginForm">
+        <div class="form-group">
+          <label class="form-label" for="login-email">Email</label>
+          <input class="form-control" type="email" id="login-email" placeholder="you@email.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="login-password">Password</label>
+          <input class="form-control" type="password" id="login-password" placeholder="••••••••" required />
+        </div>
+        <p class="form-error" id="login-error" style="display:none;margin-bottom:0.8rem;"></p>
+        <button class="btn btn-primary btn-full btn-lg" type="submit">Sign In</button>
+      </form>
+
+      <div class="divider">or</div>
+
+      <button class="btn btn-google btn-full" type="button">
+        <svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 6.29C4.672 4.163 6.656 3.58 9 3.58z"/></svg>
+        Continue with Google
+      </button>
+
+      <p class="switch-auth">Don't have an account? <a onclick="switchTab('register')">Create one free</a></p>
+    </div>
+
+    <!-- REGISTER PANEL -->
+    <div class="auth-panel" data-panel="register" style="display:none;">
+      <!-- Step indicator -->
+      <div class="steps">
+        <div class="step active step-indicator"></div>
+        <div class="step step-indicator"></div>
+      </div>
+
+      <!-- Step 1: Account -->
+      <div class="reg-step" data-step="1">
+        <form id="registerStep1">
+          <div class="form-group">
+            <label class="form-label" for="reg-username">Username</label>
+            <input class="form-control" type="text" id="reg-username" placeholder="coolmedstudent" minlength="3" required />
+            <p class="form-hint" id="username-hint"></p>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-email">Email</label>
+            <input class="form-control" type="email" id="reg-email" placeholder="you@email.com" required />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="reg-password">Password</label>
+              <input class="form-control" type="password" id="reg-password" placeholder="••••••••" minlength="6" required />
+              <p class="form-error" id="reg-password-error"></p>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="reg-confirm">Confirm</label>
+              <input class="form-control" type="password" id="reg-confirm" placeholder="••••••••" required />
+              <p class="form-error" id="reg-confirm-error"></p>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-full btn-lg" type="submit">Continue →</button>
+        </form>
+
+        <div class="divider">or</div>
+        <button class="btn btn-google btn-full" type="button">
+          <svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 6.29C4.672 4.163 6.656 3.58 9 3.58z"/></svg>
+          Sign up with Google
+        </button>
+      </div>
+
+      <!-- Step 2: Location -->
+      <div class="reg-step" data-step="2" style="display:none;">
+        <form id="registerStep2">
+          <p style="font-size:0.9rem;color:var(--gray);margin-bottom:1.2rem;">Where are you joining from? We use this to show you local resources.</p>
+          <div class="form-group">
+            <label class="form-label" for="reg-country">Country</label>
+            <select class="form-control country-select" id="reg-country" required>
+              <option value="">Select your country...</option>
+            </select>
+            <p class="form-error" id="reg-country-error"></p>
+          </div>
+          <div class="form-group state-group" style="display:none;">
+            <label class="form-label" for="reg-state">State</label>
+            <select class="form-control state-select" id="reg-state">
+              <option value="">Select your state...</option>
+            </select>
+            <p class="form-error" id="reg-state-error"></p>
+          </div>
+          <p class="form-error" id="reg-step2-error" style="margin-bottom:0.8rem;"></p>
+          <div style="display:flex;gap:0.8rem;">
+            <button type="button" class="btn btn-outline" id="backToStep1" style="flex:0 0 auto;">← Back</button>
+            <button class="btn btn-primary btn-full btn-lg" type="submit">Create My Account 🩺</button>
+          </div>
+        </form>
+      </div>
+
+      <p class="switch-auth">Already have an account? <a onclick="switchTab('login')">Sign in</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- Main Content -->
+<main>
+  {% block content %}{% endblock %}
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">🩺 Teen<span>Med</span></div>
+        <p class="footer-desc">Empowering the next generation of healers with knowledge, resources, and community.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Explore</div>
+        <ul>
+          <li><a href="/future-doctor">Future Doctor Hub</a></li>
+          <li><a href="/health-literacy">Health Literacy</a></li>
+          <li><a href="/cpr-firstaid">CPR & First Aid</a></li>
+          <li><a href="/research">Medical Research</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Resources</div>
+        <ul>
+          <li><a href="/equipment">Equipment Donations</a></li>
+          <li><a href="/mental-health">Mental Health</a></li>
+          <li><a href="/dashboard">Dashboard</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">About</div>
+        <ul>
+          <li><a href="#">Our Mission</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 TeenMed. All rights reserved.</span>
+      <span>Made with 🩺 for the next generation</span>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast"></div>
+
+<!-- Firebase SDK (optional — only needed for Google sign-in) -->
+<!-- <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script> -->
+<!-- <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script> -->
+<script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+{% block scripts %}{% endblock %}
+
+<script>
+  // Hide loader
+  window.addEventListener('load', () => {
+    setTimeout(() => document.getElementById('pageLoader').classList.add('hidden'), 400);
+  });
+</script>
+</body>
+</html>

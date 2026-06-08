@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}Health Literacy — TeenMed{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="section-label">Hub 02</span>
+    <h1 style="margin-bottom:0.8rem;"><em style="color:var(--blue);">Health</em> Literacy</h1>
+    <p style="max-width:560px;font-size:1.05rem;">Medicine doesn't have to be confusing. We break down diseases, medications, medical terms, and how the healthcare system works — in plain English.</p>
+  </div>
+</div>
+
+<section>
+  <div class="section-inner">
+    <div class="lock-banner">
+      <div class="lock-banner-icon">🔒</div>
+      <p>Full content is available to members. <strong data-open-auth="register">Join free →</strong></p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;">
+
+      <div class="content-card">
+        <div class="content-card-header">
+          <div class="content-card-icon">🦠</div>
+          <div><h3>Diseases Explained Simply</h3><p>No medical degree required</p></div>
+        </div>
+        <div class="resource-grid" style="grid-template-columns:1fr;margin-top:0;">
+          <div class="resource-card"><h4>Diabetes — Type 1 vs Type 2</h4><p>What's happening in the body, how it's treated, and what it's like to live with it.</p></div>
+          <div class="resource-card"><h4>Hypertension (High Blood Pressure)</h4><p>Why it's called the "silent killer" and what you can do about it.</p></div>
+          <div class="resource-card"><h4>Asthma</h4><p>Triggers, inhalers, and how to help someone having an attack.</p></div>
+          <div class="resource-card"><h4>Depression & Anxiety</h4><p>The biology behind mental health conditions — it's not "just in your head."</p></div>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <div class="content-card-header">
+          <div class="content-card-icon">💊</div>
+          <div><h3>Medications Decoded</h3><p>What's actually in that pill?</p></div>
+        </div>
+        <div class="resource-grid" style="grid-template-columns:1fr;margin-top:0;">
+          <div class="resource-card"><h4>Antibiotics vs Antivirals</h4><p>When each one works — and when it doesn't.</p></div>
+          <div class="resource-card"><h4>Pain Relievers Compared</h4><p>Ibuprofen, acetaminophen, aspirin — what's the difference?</p></div>
+          <div class="resource-card"><h4>How to Read a Drug Label</h4><p>Dosage, interactions, side effects — decoded.</p></div>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <div class="content-card-header">
+          <div class="content-card-icon">🔤</div>
+          <div><h3>Medical Terms Glossary</h3><p>The words doctors use, explained</p></div>
+        </div>
+        <div class="resource-grid" style="grid-template-columns:1fr;margin-top:0;">
+          <div class="resource-card"><h4>Latin Roots of Medical Words</h4><p>Once you know the roots, you can decode almost any term.</p></div>
+          <div class="resource-card"><h4>Common Suffixes & Prefixes</h4><p>-itis, -ectomy, -ology, brady-, tachy- and more.</p></div>
+          <div class="resource-card"><h4>Vital Signs Explained</h4><p>Heart rate, blood pressure, SpO2, temperature — what's normal?</p></div>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <div class="content-card-header">
+          <div class="content-card-icon">🏥</div>
+          <div><h3>How the System Works</h3><p>Insurance, hospitals, clinics — demystified</p></div>
+        </div>
+        <div class="resource-grid" style="grid-template-columns:1fr;margin-top:0;">
+          <div class="resource-card"><h4>Health Insurance 101</h4><p>Premiums, deductibles, copays, networks — explained simply.</p></div>
+          <div class="resource-card"><h4>ER vs Urgent Care vs Clinic</h4><p>Which one to go to and when — and how much it'll cost.</p></div>
+          <div class="resource-card"><h4>How to Talk to Your Doctor</h4><p>Advocating for yourself and asking the right questions.</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

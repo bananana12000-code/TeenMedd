@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Medical Research Simplified — TeenMed{% endblock %}
+{% block content %}
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="section-label">Hub 04</span>
+    <h1 style="margin-bottom:0.8rem;">Medical Research <em style="color:var(--blue);">Simplified</em></h1>
+    <p style="max-width:560px;font-size:1.05rem;">New studies, major breakthroughs, and medical discoveries — made actually readable for teens.</p>
+  </div>
+</div>
+<section>
+  <div class="section-inner">
+    <div class="lock-banner">
+      <div class="lock-banner-icon">🔒</div>
+      <p>Full content is available to members. <strong data-open-auth="register">Join free →</strong></p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;">
+      <div class="content-card" style="grid-column:1/-1;">
+        <div class="content-card-header">
+          <div class="content-card-icon">🔬</div>
+          <div><h3>Latest Study Summaries</h3><p>Updated regularly — no subscription required</p></div>
+          <span class="coming-soon" style="margin-left:auto;">Coming Soon</span>
+        </div>
+        <p style="font-size:0.9rem;">We're building a library of study summaries written in plain language for teens. Each summary will include what the study found, why it matters, and what it means for everyday health.</p>
+      </div>
+      <div class="content-card">
+        <div class="content-card-header">
+          <div class="content-card-icon">💡</div>
+          <div><h3>Teen-Friendly Explainers</h3><p>Big ideas, small words</p></div>
+        </div>
+        <div class="resource-grid" style="grid-template-columns:1fr;margin-top:0;">
+          <div class="resource-card"><h4>What is a Clinical Trial?</h4><p>How new drugs and treatments get tested before reaching patients.</p></div>
+          <div class="resource-card"><h4>Understanding P-Values</h4><p>What "statistically significant" actually means — without the math degree.</p></div>
+          <div class="resource-card"><h4>Correlation vs Causation</h4><p>Why "X causes Y" is rarely as simple as headlines make it sound.</p></div>
+        </div>
+      </div>
+      <div class="content-card">
+        <div class="content-card-header">
+          <div class="content-card-icon">📊</div>
+          <div><h3>Infographics</h3><p>Visual summaries of complex topics</p></div>
+          <span class="coming-soon" style="margin-left:auto;">Coming Soon</span>
+        </div>
+        <p style="font-size:0.9rem;">Visual explainers of medical concepts and research findings are in progress. They'll be free to download and share.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+{% block title %}TeenMed — Medicine for the Next Generation{% endblock %}
+
+{% block content %}
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge">🌟 Free for all teens</div>
+      <h1 class="hero-title">
+        Medicine starts<br><em>with knowledge.</em>
+      </h1>
+      <p class="hero-desc">
+        TeenMed is your all-in-one platform for health literacy, CPR training, medical research, mental wellness, and the resources to start your journey toward becoming a doctor.
+      </p>
+      <div class="hero-actions">
+        <button class="btn btn-primary btn-lg" data-open-auth="register">Join Free — It's Yours 🩺</button>
+        <button class="btn btn-outline btn-lg" data-open-auth="login">Sign In</button>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-number">6</div>
+          <div class="hero-stat-label">Resource Hubs</div>
+        </div>
+        <div>
+          <div class="hero-stat-number">100%</div>
+          <div class="hero-stat-label">Free Forever</div>
+        </div>
+        <div>
+          <div class="hero-stat-number">🌍</div>
+          <div class="hero-stat-label">Worldwide Access</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="hero-card hero-card-main">
+          <div class="card-icon card-icon-blue">🫀</div>
+          <h3 style="margin-bottom:0.4rem;">Future Doctor Hub</h3>
+          <p style="font-size:0.85rem;">Shadowing guides, volunteer opportunities & doctor interviews</p>
+          <div style="margin-top:1rem;display:flex;gap:6px;flex-wrap:wrap;">
+            <span class="hub-tag">Shadowing</span>
+            <span class="hub-tag">Research</span>
+            <span class="hub-tag">Interviews</span>
+          </div>
+        </div>
+        <div class="hero-card hero-card-sm">
+          <div class="card-icon card-icon-white">🧠</div>
+          <p style="font-size:0.82rem;color:rgba(255,255,255,0.85);margin:0;">Mental Health Resources</p>
+          <p style="font-size:0.75rem;color:rgba(255,255,255,0.6);margin:0.3rem 0 0;">Stress · Burnout · Crisis</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hubs -->
+<section style="background:var(--cream-dark);">
+  <div class="section-inner">
+    <div class="section-header centered">
+      <span class="section-label">What's inside</span>
+      <h2 class="section-title">Six hubs. One mission.</h2>
+      <p class="section-desc">Everything a medically curious teen needs — all in one place, all free.</p>
+    </div>
+
+    <!-- Lock banner for guests -->
+    <div class="lock-banner">
+      <div class="lock-banner-icon">🔒</div>
+      <p>Full access requires a free account. <strong data-open-auth="register">Create yours in 60 seconds →</strong></p>
+    </div>
+
+    <div class="hubs-grid">
+
+      <div class="hub-card" onclick="window.location='/future-doctor'">
+        <div class="hub-card-icon">🩺</div>
+        <h3>Future Doctor Hub</h3>
+        <p>Your roadmap to medicine — from shadowing to interviews with real doctors.</p>
+        <div class="hub-tags">
+          <span class="hub-tag">Shadowing guides</span>
+          <span class="hub-tag">Volunteer opps</span>
+          <span class="hub-tag">Research guides</span>
+          <span class="hub-tag">Doctor interviews</span>
+        </div>
+        <a class="hub-card-link">Explore hub →</a>
+      </div>
+
+      <div class="hub-card" onclick="window.location='/health-literacy'">
+        <div class="hub-card-icon">📖</div>
+        <h3>Health Literacy</h3>
+        <p>Diseases, medications, medical terms, insurance — explained in plain English.</p>
+        <div class="hub-tags">
+          <span class="hub-tag">Disease explanations</span>
+          <span class="hub-tag">Medications</span>
+          <span class="hub-tag">Medical terms</span>
+          <span class="hub-tag">Insurance guide</span>
+        </div>
+        <a class="hub-card-link">Explore hub →</a>
+      </div>
+
+      <div class="hub-card" onclick="window.location='/cpr-firstaid'">
+        <div class="hub-card-icon">❤️‍🔥</div>
+        <h3>CPR & First Aid</h3>
+        <p>Learn life-saving skills. Find local certification. Spread awareness.</p>
+        <div class="hub-tags">
+          <span class="hub-tag">Training resources</span>
+          <span class="hub-tag">Certification finder</span>
+          <span class="hub-tag">Awareness campaigns</span>
+        </div>
+        <a class="hub-card-link">Explore hub →</a>
+      </div>
+
+      <div class="hub-card" onclick="window.location='/research'">
+        <div class="hub-card-icon">🔬</div>
+        <h3>Medical Research Simplified</h3>
+        <p>New studies made accessible — summaries, teen-friendly explainers, and infographics.</p>
+        <div class="hub-tags">
+          <span class="hub-tag">Study summaries</span>
+          <span class="hub-tag">Teen explainers</span>
+          <span class="hub-tag">Infographics</span>
+        </div>
+        <a class="hub-card-link">Explore hub →</a>
+      </div>
+
+      <div class="hub-card" onclick="window.location='/equipment'">
+        <div class="hub-card-icon">🏥</div>
+        <h3>Equipment Donation Network</h3>
+        <p>Connect communities with medical equipment — local directory, partners, request forms.</p>
+        <div class="hub-tags">
+          <span class="hub-tag">Local directory</span>
+          <span class="hub-tag">Partner orgs</span>
+          <span class="hub-tag">Request form</span>
+        </div>
+        <a class="hub-card-link">Explore hub →</a>
+      </div>
+
+      <div class="hub-card" onclick="window.location='/mental-health'">
+        <div class="hub-card-icon">🧠</div>
+        <h3>Mental Health Center</h3>
+        <p>Stress management, burnout help, crisis resources, and wellness tools for teens.</p>
+        <div class="hub-tags">
+          <span class="hub-tag">Stress management</span>
+          <span class="hub-tag">Burnout resources</span>
+          <span class="hub-tag">Crisis resources</span>
+          <span class="hub-tag">Wellness</span>
+        </div>
+        <a class="hub-card-link">Explore hub →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="section-inner">
+    <div style="background:var(--blue);border-radius:24px;padding:4rem 3rem;text-align:center;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-60px;right:-60px;width:240px;height:240px;background:rgba(255,255,255,0.05);border-radius:50%;"></div>
+      <div style="position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;background:rgba(255,255,255,0.05);border-radius:50%;"></div>
+      <span style="font-size:3rem;">🩺</span>
+      <h2 style="color:white;margin:1rem 0 0.8rem;">Ready to start your medical journey?</h2>
+      <p style="color:rgba(255,255,255,0.7);max-width:480px;margin:0 auto 2rem;">It's free. It's yours. Join thousands of teens building their medical future with TeenMed.</p>
+      <button class="btn btn-lg" style="background:white;color:var(--blue);font-weight:600;" data-open-auth="register">Create Your Free Account</button>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

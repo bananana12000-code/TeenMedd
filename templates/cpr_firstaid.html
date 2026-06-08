@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% block title %}CPR & First Aid — TeenMed{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="section-label">Hub 03</span>
+    <h1 style="margin-bottom:0.8rem;">CPR & <em style="color:var(--blue);">First Aid</em></h1>
+    <p style="max-width:560px;font-size:1.05rem;">Knowing CPR can mean the difference between life and death. Learn the skills, find local certification, and help spread the word.</p>
+  </div>
+</div>
+
+<section>
+  <div class="section-inner">
+    <div class="lock-banner">
+      <div class="lock-banner-icon">🔒</div>
+      <p>Full content is available to members. <strong data-open-auth="register">Join free →</strong></p>
+    </div>
+
+    <!-- Alert banner -->
+    <div style="background:#FFF3F3;border:1px solid rgba(232,75,75,0.2);border-radius:var(--radius);padding:1.2rem 1.5rem;margin-bottom:2rem;display:flex;gap:1rem;align-items:center;">
+      <span style="font-size:1.4rem;">🚨</span>
+      <p style="color:#C0392B;margin:0;font-size:0.9rem;"><strong>In a real emergency, always call 911 first.</strong> This content is for education only.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+
+      <div class="content-card" style="grid-column:1/-1;">
+        <div class="content-card-header">
+          <div class="content-card-icon">❤️‍🔥</div>
+          <div><h3>How to Perform CPR</h3><p>Step-by-step — adult, child, and infant</p></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:0.5rem;">
+          <div style="background:var(--cream);border-radius:var(--radius-sm);padding:1rem;text-align:center;">
+            <div style="font-size:1.8rem;margin-bottom:0.5rem;">📞</div>
+            <div style="font-weight:600;font-size:0.85rem;margin-bottom:0.3rem;">1. Call 911</div>
+            <div style="font-size:0.78rem;color:var(--gray);">Call immediately or have someone else call</div>
+          </div>
+          <div style="background:var(--cream);border-radius:var(--radius-sm);padding:1rem;text-align:center;">
+            <div style="font-size:1.8rem;margin-bottom:0.5rem;">🤲</div>
+            <div style="font-weight:600;font-size:0.85rem;margin-bottom:0.3rem;">2. Chest Compressions</div>
+            <div style="font-size:0.78rem;color:var(--gray);">100–120 per minute, 2 inches deep</div>
+          </div>
+          <div style="background:var(--cream);border-radius:var(--radius-sm);padding:1rem;text-align:center;">
+            <div style="font-size:1.8rem;margin-bottom:0.5rem;">💨</div>
+            <div style="font-weight:600;font-size:0.85rem;margin-bottom:0.3rem;">3. Rescue Breaths</div>
+            <div style="font-size:0.78rem;color:var(--gray);">2 breaths after every 30 compressions</div>
+          </div>
+          <div style="background:var(--blue-pale);border-radius:var(--radius-sm);padding:1rem;text-align:center;border:1px solid rgba(27,79,216,0.15);">
+            <div style="font-size:1.8rem;margin-bottom:0.5rem;">⚡</div>
+            <div style="font-weight:600;font-size:0.85rem;margin-bottom:0.3rem;color:var(--blue);">4. Use AED</div>
+            <div style="font-size:0.78rem;color:var(--gray);">If available — follow the prompts</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <div class="content-card-header">
+          <div class="content-card-icon">🎓</div>
+          <div><h3>Training Resources</h3><p>Free & trusted learning materials</p></div>
+        </div>
+        <div class="resource-grid" style="grid-template-columns:1fr;margin-top:0;">
+          <div class="resource-card">
+            <h4>American Red Cross — Free CPR Basics</h4>
+            <p>Free online CPR awareness course from the Red Cross.</p>
+            <a href="https://www.redcross.org/take-a-class/cpr" target="_blank" style="color:var(--blue);font-size:0.85rem;font-weight:600;">Visit site →</a>
+          </div>
+          <div class="resource-card">
+            <h4>American Heart Association</h4>
+            <p>Hands-Only CPR resources, videos, and training finder.</p>
+            <a href="https://cpr.heart.org" target="_blank" style="color:var(--blue);font-size:0.85rem;font-weight:600;">Visit site →</a>
+          </div>
+          <div class="resource-card">
+            <h4>PulsePoint — Community Response</h4>
+            <p>App that alerts nearby trained responders when CPR is needed.</p>
+            <a href="https://www.pulsepoint.org" target="_blank" style="color:var(--blue);font-size:0.85rem;font-weight:600;">Visit site →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <div class="content-card-header">
+          <div class="content-card-icon">📍</div>
+          <div><h3>Find Local Certification</h3><p>Get certified near you</p></div>
+        </div>
+        <div class="resource-grid" style="grid-template-columns:1fr;margin-top:0;">
+          <div class="resource-card">
+            <h4>Red Cross — Class Finder</h4>
+            <p>Find in-person CPR/AED certification classes in your area.</p>
+            <a href="https://www.redcross.org/take-a-class" target="_blank" style="color:var(--blue);font-size:0.85rem;font-weight:600;">Find a class →</a>
+          </div>
+          <div class="resource-card">
+            <h4>AHA Training Centers</h4>
+            <p>Locate American Heart Association certified training near you.</p>
+            <a href="https://cpr.heart.org/en/courses/cpr-classes-near-me" target="_blank" style="color:var(--blue);font-size:0.85rem;font-weight:600;">Find a class →</a>
+          </div>
+          <div class="resource-card">
+            <h4>Free Teen Programs</h4>
+            <p>Many schools and YMCAs offer free certification for teens. Ask your school nurse!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <div class="content-card-header">
+          <div class="content-card-icon">📢</div>
+          <div>
+            <h3>Awareness Campaigns</h3>
+            <p>Spread the word in your community</p>
+          </div>
+          <span class="coming-soon" style="margin-left:auto;">Coming Soon</span>
+        </div>
+        <p style="font-size:0.9rem;">Teen-led awareness campaign toolkits for school presentations and social media are coming. Want to help build this? Get in touch!</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

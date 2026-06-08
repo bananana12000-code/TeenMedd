@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}Mental Health Resource Center — TeenMed{% endblock %}
+{% block content %}
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="section-label">Hub 06</span>
+    <h1 style="margin-bottom:0.8rem;">Mental Health <em style="color:var(--blue);">Resource Center</em></h1>
+    <p style="max-width:560px;font-size:1.05rem;">Your mental health is just as important as your physical health. Resources for stress, burnout, crisis support, and everyday wellness.</p>
+  </div>
+</div>
+<section>
+  <div class="section-inner">
+
+    <!-- Crisis banner always visible -->
+    <div style="background:var(--blue);color:white;border-radius:var(--radius);padding:1.5rem 2rem;margin-bottom:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:0.3rem;">🚨 In a mental health crisis right now?</div>
+        <p style="opacity:0.85;margin:0;font-size:0.9rem;">You are not alone. Reach out — it's free, confidential, and available 24/7.</p>
+      </div>
+      <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+        <a href="tel:988" class="btn" style="background:white;color:var(--blue);font-weight:700;">📞 Call/Text 988</a>
+        <a href="sms:741741?body=HOME" class="btn" style="background:rgba(255,255,255,0.15);color:white;border:1px solid rgba(255,255,255,0.3);">💬 Text HOME to 741741</a>
+      </div>
+    </div>
+
+    <div class="lock-banner">
+      <div class="lock-banner-icon">🔒</div>
+      <p>Full content is available to members. <strong data-open-auth="register">Join free →</strong></p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;">
+
+      <div class="content-card">
+        <div class="content-card-header">
+          <div class="content-card-icon">🧘</div>
+          <div><h3>Stress Management</h3><p>Practical tools that actually work</p></div>
+        </div>
+        <div class="resource-grid" style="grid-template-columns:1fr;margin-top:0;">
+          <div class="resource-card"><h4>Box Breathing Technique</h4><p>4-4-4-4 breathing used by Navy SEALs to calm the nervous system in seconds.</p></div>
+          <div class="resource-card"><h4>5-4-3-2-1 Grounding</h4><p>A sensory technique to bring you back to the present moment during anxiety.</p></div>
+          <div class="resource-card"><h4>Stress Journaling</h4><p>How to use writing to process and reduce stress scientifically.</p></div>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <div class="content-card-header">
+          <div class="content-card-icon">📚</div>
+          <div><h3>Academic Burnout</h3><p>When school feels like too much</p></div>
+        </div>
+        <div class="resource-grid" style="grid-template-columns:1fr;margin-top:0;">
+          <div class="resource-card"><h4>Signs You're Burning Out</h4><p>Recognizing burnout before it takes over — and what to do about it.</p></div>
+          <div class="resource-card"><h4>Talking to a Teacher or Counselor</h4><p>How to advocate for yourself when you're overwhelmed at school.</p></div>
+          <div class="resource-card"><h4>Study-Life Balance for Teens</h4><p>Evidence-based strategies for managing a heavy academic load without losing yourself.</p></div>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <div class="content-card-header">
+          <div class="content-card-icon">🆘</div>
+          <div><h3>Crisis Resources</h3><p>Free, confidential, available 24/7</p></div>
+        </div>
+        <div class="resource-grid" style="grid-template-columns:1fr;margin-top:0;">
+          <div class="resource-card" style="border-left:3px solid var(--red-soft);">
+            <h4>988 Suicide & Crisis Lifeline</h4>
+            <p>Call or text <strong>988</strong>. Free, confidential support in English and Spanish.</p>
+            <a href="tel:988" style="color:var(--red-soft);font-weight:600;font-size:0.85rem;">Call 988 →</a>
+          </div>
+          <div class="resource-card" style="border-left:3px solid var(--blue);">
+            <h4>Crisis Text Line</h4>
+            <p>Text <strong>HOME to 741741</strong> for free crisis counseling via text.</p>
+            <a href="sms:741741?body=HOME" style="color:var(--blue);font-weight:600;font-size:0.85rem;">Text now →</a>
+          </div>
+          <div class="resource-card">
+            <h4>Trevor Project (LGBTQ+ Youth)</h4>
+            <p>Call 1-866-488-7386 or text START to 678-678.</p>
+            <a href="https://www.thetrevorproject.org" target="_blank" style="color:var(--blue);font-weight:600;font-size:0.85rem;">Visit site →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <div class="content-card-header">
+          <div class="content-card-icon">🌱</div>
+          <div><h3>Wellness Information</h3><p>Build a foundation of good mental health</p></div>
+        </div>
+        <div class="resource-grid" style="grid-template-columns:1fr;margin-top:0;">
+          <div class="resource-card"><h4>Sleep & Mental Health</h4><p>Why teens need 8–10 hours and what happens when they don't get it.</p></div>
+          <div class="resource-card"><h4>Exercise as Medication</h4><p>The science of how movement reduces anxiety and depression.</p></div>
+          <div class="resource-card"><h4>Social Media & Your Brain</h4><p>Understanding how apps are designed to affect your mood — and what to do about it.</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

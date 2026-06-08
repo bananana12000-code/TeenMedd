@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Medical Equipment Donation Network — TeenMed{% endblock %}
+{% block content %}
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="section-label">Hub 05</span>
+    <h1 style="margin-bottom:0.8rem;">Equipment <em style="color:var(--blue);">Donation Network</em></h1>
+    <p style="max-width:560px;font-size:1.05rem;">Connecting communities with the medical equipment they need. Donate, find, or request — all in one place.</p>
+  </div>
+</div>
+<section>
+  <div class="section-inner">
+    <div class="lock-banner">
+      <div class="lock-banner-icon">🔒</div>
+      <p>Full access is available to members. <strong data-open-auth="register">Join free →</strong></p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+      <div class="content-card">
+        <div class="content-card-header">
+          <div class="content-card-icon">📍</div>
+          <div><h3>Local Directory</h3><p>Find donation centers near you</p></div>
+          <span class="coming-soon" style="margin-left:auto;">Coming Soon</span>
+        </div>
+        <p style="font-size:0.9rem;">We're building a searchable directory of local medical equipment donation centers, free clinics, and community health organizations by state and country.</p>
+      </div>
+      <div class="content-card">
+        <div class="content-card-header">
+          <div class="content-card-icon">🤝</div>
+          <div><h3>Partner Organizations</h3><p>Organizations doing great work</p></div>
+        </div>
+        <div class="resource-grid" style="grid-template-columns:1fr;margin-top:0;">
+          <div class="resource-card"><h4>Doctors Without Borders</h4><p>International medical humanitarian organization providing care in crisis zones.</p><a href="https://www.doctorswithoutborders.org" target="_blank" style="color:var(--blue);font-size:0.85rem;font-weight:600;">Learn more →</a></div>
+          <div class="resource-card"><h4>Project C.U.R.E.</h4><p>Largest distributor of donated medical equipment to developing nations.</p><a href="https://projectcure.org" target="_blank" style="color:var(--blue);font-size:0.85rem;font-weight:600;">Learn more →</a></div>
+          <div class="resource-card"><h4>MedShare</h4><p>Recovers surplus medical supplies and delivers them to communities in need.</p><a href="https://medshare.org" target="_blank" style="color:var(--blue);font-size:0.85rem;font-weight:600;">Learn more →</a></div>
+        </div>
+      </div>
+      <div class="content-card">
+        <div class="content-card-header">
+          <div class="content-card-icon">📋</div>
+          <div><h3>Equipment Request</h3><p>Need medical equipment? Let us know</p></div>
+          <span class="coming-soon" style="margin-left:auto;">Coming Soon</span>
+        </div>
+        <p style="font-size:0.9rem;">Our equipment request form is coming soon. In the meantime, reach out to our partner organizations directly — they may be able to help right away.</p>
+        <button class="btn btn-outline" style="margin-top:1rem;width:100%;opacity:0.5;cursor:not-allowed;" disabled>Request Form — Coming Soon</button>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

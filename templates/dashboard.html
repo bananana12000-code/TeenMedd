@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — TeenMed{% endblock %}
+
+{% block content %}
+<div class="dashboard-layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div style="padding:0 0.8rem 1.5rem;border-bottom:1px solid var(--border);margin-bottom:1.5rem;">
+      <div style="font-size:0.8rem;color:var(--gray);margin-bottom:4px;">Signed in as</div>
+      <div style="font-weight:600;color:var(--black);" class="user-username">—</div>
+      <div style="font-size:0.8rem;color:var(--gray);" class="user-country">—</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Hubs</div>
+      <a href="/future-doctor" class="sidebar-item"><span class="sidebar-item-icon">🩺</span> Future Doctor</a>
+      <a href="/health-literacy" class="sidebar-item"><span class="sidebar-item-icon">📖</span> Health Literacy</a>
+      <a href="/cpr-firstaid" class="sidebar-item"><span class="sidebar-item-icon">❤️‍🔥</span> CPR & First Aid</a>
+      <a href="/research" class="sidebar-item"><span class="sidebar-item-icon">🔬</span> Research</a>
+      <a href="/equipment" class="sidebar-item"><span class="sidebar-item-icon">🏥</span> Equipment Donations</a>
+      <a href="/mental-health" class="sidebar-item"><span class="sidebar-item-icon">🧠</span> Mental Health</a>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-label">Account</div>
+      <a href="#" class="sidebar-item"><span class="sidebar-item-icon">⚙️</span> Settings</a>
+      <a href="#" class="sidebar-item" data-logout><span class="sidebar-item-icon">🚪</span> Sign Out</a>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <div class="main-content">
+    <div style="margin-bottom:2rem;">
+      <h1 style="font-size:2rem;margin-bottom:0.4rem;">Welcome back, <span class="user-username" style="color:var(--blue);"></span> 👋</h1>
+      <p>Here's what's waiting for you on TeenMed.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:2rem;">
+      <div style="background:var(--blue);color:white;border-radius:var(--radius);padding:1.5rem;">
+        <div style="font-size:2rem;margin-bottom:0.5rem;">🩺</div>
+        <div style="font-size:1.1rem;font-family:'Playfair Display',serif;font-weight:600;margin-bottom:0.3rem;">Future Doctor</div>
+        <div style="font-size:0.8rem;opacity:0.75;">Start your medical journey</div>
+      </div>
+      <div style="background:white;border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;">
+        <div style="font-size:2rem;margin-bottom:0.5rem;">❤️‍🔥</div>
+        <div style="font-size:1.1rem;font-family:'Playfair Display',serif;font-weight:600;margin-bottom:0.3rem;">CPR Certified?</div>
+        <div style="font-size:0.8rem;color:var(--gray);">Find local training</div>
+      </div>
+      <div style="background:white;border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;">
+        <div style="font-size:2rem;margin-bottom:0.5rem;">🧠</div>
+        <div style="font-size:1.1rem;font-family:'Playfair Display',serif;font-weight:600;margin-bottom:0.3rem;">Mental Health</div>
+        <div style="font-size:0.8rem;color:var(--gray);">Wellness check-in</div>
+      </div>
+    </div>
+
+    <div class="content-card">
+      <div class="content-card-header">
+        <div class="content-card-icon">🔬</div>
+        <div>
+          <h3>Latest Medical Research</h3>
+          <p style="font-size:0.85rem;">Teen-friendly summaries updated regularly</p>
+        </div>
+        <span class="coming-soon" style="margin-left:auto;">Coming Soon</span>
+      </div>
+      <p style="font-size:0.9rem;">New study summaries and infographics are on their way. Check back soon!</p>
+    </div>
+
+    <div class="content-card">
+      <div class="content-card-header">
+        <div class="content-card-icon">📖</div>
+        <div>
+          <h3>Health Literacy Library</h3>
+          <p style="font-size:0.85rem;">Diseases, medications, medical terms explained</p>
+        </div>
+      </div>
+      <div class="resource-grid" style="margin-top:0;">
+        <div class="resource-card"><h4>🫁 Understanding Asthma</h4><p>What it is, how it works, how to manage it.</p></div>
+        <div class="resource-card"><h4>💊 How Antibiotics Work</h4><p>The difference between bacteria and viruses.</p></div>
+        <div class="resource-card"><h4>🏥 Navigating the ER</h4><p>What to expect if you end up in the emergency room.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  // Redirect to home if not logged in
+  fetch('/api/me').then(r => r.json()).then(data => {
+    if (!data.authenticated) window.location.href = '/';
+  });
+</script>
+{% endblock %}
