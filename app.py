@@ -12,7 +12,7 @@ except ImportError:
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'teenmed-secret-key-change-in-production')
-app.permanent_session_lifetime = timedelta(days=365)app.permanent_session_lifetime = timedelta(days=365)
+app.permanent_session_lifetime = timedelta(days=365)
 
 # Database config
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///teenmed.db')
