@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}How to Find a Doctor to Shadow — TeenMed{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="section-label">Shadowing Guides</span>
+    <h1 style="margin-bottom:0.8rem;">How to Find a <em style="color:var(--blue);">Doctor to Shadow</em></h1>
+    <p style="max-width:560px;font-size:1.05rem;">Everything you need to reach out, get accepted, and make the most of your shadowing experience.</p>
+  </div>
+</div>
+
+<section>
+  <div class="section-inner">
+
+    <div style="max-width:800px;margin:0 auto;">
+
+      <!-- Add your content cards here -->
+      <div class="content-card" style="margin-bottom:1.5rem;">
+        <h3 style="margin-bottom:0.8rem;">Where to Start</h3>
+        <p>Your content here...</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  // Redirect if not logged in
+  fetch('/api/me').then(r => r.json()).then(data => {
+    if (!data.authenticated) {
+      window.location.href = '/';
+    }
+  });
+</script>
+{% endblock %}
