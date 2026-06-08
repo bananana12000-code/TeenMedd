@@ -225,6 +225,9 @@ def equipment():
 def mental_health():
     return render_template('mental_health.html')
 
+@app.route('/shadowing-guide')
+def shadowing_guide():
+    return render_template('shadowing_guide.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
